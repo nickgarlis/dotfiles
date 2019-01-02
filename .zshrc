@@ -14,6 +14,11 @@ source $ZSH/oh-my-zsh.sh
 # Load fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Start tmux
+if [ -z "$TMUX" ]; then
+  tmux
+fi
+
 # Path to yarn installations.
 export PATH="$(yarn global bin):$PATH"
 
