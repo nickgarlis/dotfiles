@@ -16,6 +16,6 @@ cd dotfiles && ./install.sh
 ### Update
 
 ```sh
-git pull
-cp init.vim && ./install.sh
+git pull origin master
+cd dotfiles && ./install.sh
 ```
