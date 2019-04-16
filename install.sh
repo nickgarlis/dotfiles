@@ -2,6 +2,7 @@
 
 set -e
 
+# TODO: Create backups
 rm -rf ~/.config/nvim
 
 # Install nvim (and its dependencies: pip3, git), Python 3 and ctags (for tagbar)
