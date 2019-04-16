@@ -17,5 +17,5 @@ cd dotfiles && ./install.sh
 
 ```sh
 git pull origin master
-cd dotfiles && ./install.sh
+cd dotfiles && ./update.sh
 ```
