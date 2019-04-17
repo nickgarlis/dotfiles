@@ -80,10 +80,13 @@ set clipboard=unnamedplus
 
 """ Plugin Configurations
 
-" NERDTree
+" NERD Tree
 let NERDTreeShowHidden=1
 let g:NERDTreeDirArrowExpandable = '↠'
 let g:NERDTreeDirArrowCollapsible = '↡'
+
+" NERD Commenter
+let g:NERDSpaceDelims = 1
 
 " Airline
 let g:airline_powerline_fonts = 1
