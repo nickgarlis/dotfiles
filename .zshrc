@@ -1,20 +1,7 @@
-# Path to your oh-my-zsh installation.
-export ZSH="/home/$(whoami)/.oh-my-zsh"
-
-# oh-my-zsh theme
-ZSH_THEME="alanpeabody"
-
-# oh-my-zsh plugins
-plugins=(
-  git
-)
-
-source $ZSH/oh-my-zsh.sh
-
 # Load fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Path to yarn installations.
+# Path to yarn installations
 export PATH="$(yarn global bin):$PATH"
 
 # Preferred editor for local and remote sessions
@@ -24,4 +11,15 @@ else
   export EDITOR='nvim'
 fi
 
-alias vim="nvim"
+alias vim='nvim'
+
+parse_git_branch() {
+  git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/\1/p'
+}
+
+autoload -Uz promptinit
+promptinit
+setopt PROMPT_SUBST
+
+PROMPT='%F{magenta}%n@%M %F{cyan}%~ %F{white}'
+RPROMPT='$(parse_git_branch)'

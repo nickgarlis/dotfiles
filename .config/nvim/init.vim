@@ -40,8 +40,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'chrisbra/Colorizer'
 Plug 'vim-scripts/loremipsum'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'metakirby5/codi.vim'
 Plug 'w0rp/ale'
 
@@ -62,8 +60,8 @@ highlight NonText guibg=none
 set termguicolors
 
 " Transparent Background (For i3 and compton)
-"highlight Normal guibg=NONE ctermbg=NONE
-"highlight LineNr guibg=NONE ctermbg=NONE
+" highlight Normal guibg=NONE ctermbg=NONE
+" highlight LineNr guibg=NONE ctermbg=NONE
 
 """ Other Configurations
 filetype plugin indent on
@@ -108,11 +106,6 @@ set completeopt-=preview
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "<C-n>"
-
-" Ultisnips
-let g:UltiSnipsExpandTrigger="<C-Space>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<C-x>"
 
 " EasyAlign
 xmap ga <Plug>(EasyAlign)
@@ -225,3 +218,12 @@ nmap <silent> <leader><leader> :noh<CR>
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
 nnoremap ; :
+
+function! LoadSnippet(snippet)
+  :execute "-1read" . g:snippetsDir . a:snippet
+endfunction
+
+" Snippets
+let snippetsDir="$HOME/.config/nvim/snippets/"
+nnoremap <leader>rcc :call LoadSnippet("reactClassComponent.js")<CR>5jo
+nnoremap <leader>rfc :call LoadSnippet("reactFunctionalComponent.js")<CR>4jo
