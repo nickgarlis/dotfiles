@@ -47,5 +47,5 @@ autoload -Uz promptinit
 promptinit
 setopt PROMPT_SUBST
 
-PROMPT='%F{magenta}%n@%M %F{cyan}%~ %F{white}'
-RPROMPT='$(parse_git_branch)'
+PROMPT='%F{magenta}%n@%M %F{cyan}%~ %F{regular}'
+RPROMPT='%F{cyan}$(parse_git_branch)%F{regular}'
