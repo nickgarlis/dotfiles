@@ -30,8 +30,7 @@ font pango:System San Franscisco Display 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st
-
+bindsym $mod+Return exec st -f "Menlo:pixelsize=16:antialias=true:autohint=true"
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -222,4 +221,3 @@ bindsym XF86AudioPrev exec playerctl previous
 # Background image
 exec_always feh --bg-scale ~/Pictures/background.jpg
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id "setxkbmap -layout us,gr,no -option grp:alt_shift_toggle"

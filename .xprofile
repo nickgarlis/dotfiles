@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Set US, GR and NO layouts. Toggle with alt, shift. Turn Caps lock into escape.
+setxkbmap -layout us,gr,no -option grp:alt_shift_toggle,caps:escape
